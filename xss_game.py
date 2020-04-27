@@ -1,12 +1,20 @@
 from flask import *
 import re,cgi
 app = Flask(__name__)
-app.secret_key = "secret key"
+app.secret_key = "alachamtouri"
+
+"""
+this link will reset your session and then redirects you to home page
+"""
 
 @app.route("/reset",methods=['GET','POST'])
 def reset():
  session.clear()
  return redirect(url_for('home'))
+
+"""
+this home page where it is required to submit your name as player in order to access the rest of the pages
+"""
 
 @app.route("/",methods=['GET','POST'])
 def home():
@@ -26,6 +34,10 @@ def home():
 <b>Player's name:</b><input type="text" placeholder="Enter Your Name..." name="login" required>
 <<br><button type="submit">submit</button>
 </form>"""
+
+"""
+this is easy level where any js payload will be passed without any problem
+"""
 
 @app.route("/easy",methods=['GET'])
 def easy():
@@ -49,6 +61,10 @@ def easy():
   return resp
  else:
     return redirect(url_for('home'))
+
+"""
+this is medium level where any js payload with "<script>" will fail, so use your imagination ;)
+"""
 
 @app.route("/medium",methods=['GET'])
 def medium():
@@ -75,6 +91,10 @@ def medium():
  else:
     return redirect(url_for('home'))
 
+"""
+this is hard level where you have to run js without using any js tags :p
+"""
+
 @app.route("/hard",methods=['GET'])
 def hard():
  if session:
@@ -99,6 +119,11 @@ def hard():
   return resp
  else:
     return redirect(url_for('home'))
+
+"""
+this is level impossible where it's impossible to use any js or html payloads (it's just an example of how to fix the XSS vulnerability so don't even bother yourselves playing it xD )
+"""
+  
 @app.route("/impossible",methods=['GET'])
 def impossible():
  if session:
