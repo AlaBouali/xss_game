@@ -124,4 +124,4 @@ def impossible():
     return redirect(url_for('home'))
 
 
-app.run(host='0.0.0.0',debug=True,threaded=True,port=80)
+app.run(host='0.0.0.0',debug=True,threaded=True,port=8888)
