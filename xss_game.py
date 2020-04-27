@@ -32,7 +32,7 @@ def home():
 <h2>Home</h2>
 <br><br><form action="" method="post">
 <b>Player's name:</b><input type="text" placeholder="Enter Your Name..." name="login" required>
-<<br><button type="submit">submit</button>
+<br><button type="submit">submit</button>
 </form>"""
 
 """
@@ -54,7 +54,7 @@ def easy():
 {}
 <br><br><form action="easy" method="get">
 <b>message to display:</b><input type="text" placeholder="Enter Your Message..." name="u" required>
-<<br><button type="submit">submit</button>
+<br><button type="submit">submit</button>
 </form>""".format(msg))
   resp.set_cookie('level', "easy")
   resp.set_cookie('username', session["user"])
@@ -83,7 +83,7 @@ def medium():
 {}
 <br><br><form action="medium" method="get">
 <b>message to display:</b><input type="text" placeholder="Enter Your Message..." name="u" required>
-<<br><button type="submit">submit</button>
+<br><button type="submit">submit</button>
 </form>""".format(msg))
   resp.set_cookie('level', "medium")
   resp.set_cookie('username', session["user"])
@@ -112,7 +112,7 @@ def hard():
 {}
 <br><br><form action="hard" method="get">
 <b>message to display:</b><input type="text" placeholder="Enter Your Message..." name="u" required>
-<<br><button type="submit">submit</button>
+<br><button type="submit">submit</button>
 </form>""".format(msg))
   resp.set_cookie('level', "hard")
   resp.set_cookie('username', session["user"])
@@ -140,7 +140,7 @@ def impossible():
 {}
 <br><br><form action="impossible" method="get">
 <b>message to display:</b><input type="text" placeholder="Enter Your Message..." name="u" required>
-<<br><button type="submit">submit</button>
+<br><button type="submit">submit</button>
 </form>""".format(msg))
   resp.set_cookie('level', "impossible")
   resp.set_cookie('username', session["user"])
