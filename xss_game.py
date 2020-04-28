@@ -7,7 +7,7 @@ app.secret_key = "alachamtouri"
 this link will reset your session and then redirects you to home page
 """
 
-@app.route("/reset",methods=['GET','POST'])
+@app.route("/reset",methods=['GET'])
 def reset():
  session.clear()
  return redirect(url_for('home'))
