@@ -100,7 +100,7 @@ def hard():
  if session:
   u = request.args.get('u')
   if u :
-    if  re.findall(r"<[^>]+script[^>]+>",u.lower()):
+    if  re.findall(r"<*?script.*?>",u.lower()):
      u=cgi.escape(u,quote=True)
     msg="<b>Your input:</b><br><br>"+u
   else:
